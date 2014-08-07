@@ -1,0 +1,47 @@
+/* Frame */
+.frame,
+.frame-sm,
+.frame-es {
+    .frame-standard();
+	.frame-border();
+}
+
+.frame {.frame-radius(18px);}
+.frame-sm {
+    padding: 12px 8px;
+	.frame-radius(10px);
+}
+
+.frame-es {
+	.frame-radius(5px);
+	padding: 8px 4px;
+}
+
+/*Panel*/
+.panel,
+.panel-solid {
+	width: 100%;
+	padding:10px;
+	position:relative;
+}
+
+.panel {
+    background-color:  rgba(255, 255, 255, 0.67);
+    @value: 2px 0px 3px rgba(0,0,0,.4), 0px -1px 2px rgba(0,0,0,.4) inset;
+    .shadowing-general(@value);
+}
+
+.panel-solid {
+	background: #d6cccc;
+    border: 1px solid #efd7d7;
+    @value: 2px 2px 3px rgba(0,0,0,.2) inset, 0px -3px 5px rgba(0,0,0,.4) inset;
+    .shadowing-general(@value);
+}
+
+.extend-left-curve {
+	.frame-radius-left(20px);
+}
+
+.extend-right-curve {
+	.frame-radius-right(20px);
+}

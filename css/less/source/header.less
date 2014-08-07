@@ -1,0 +1,18 @@
+.header {
+    min-height: 50px;
+    .padding-set(@gutter);
+    .header-gradient();
+    border-bottom: 1px solid white;
+    .logo {
+        float:left;
+        padding:5px;
+        img {
+            width: 150px;
+            height: 60px;
+        }
+    }
+    &:after {
+        .clearfix();
+    }
+}
+

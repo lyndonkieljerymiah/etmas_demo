@@ -1,0 +1,57 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+/*flingster body*/
+body {
+  background: #ffffff;
+  padding-top: 50px;
+}
+/*flingster custom grid layout*/
+.fl-sidebar {
+  border-right: 1px solid #d3d3d3;
+}
+.fl-sidebar .fl-section-photo {
+  padding: 10px;
+}
+/*flingster photo*/
+.fl-prim-photo {
+  width: 220px;
+  heigth: 220px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  margin: 0 auto;
+}
+.fl-prim-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+/*flingster navigation*/
+.fl-nav-basic-info {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.fl-nav-basic-info li {
+  padding: 5px;
+  border-bottom: 1px solid #d3d3d3;
+  display: block;
+}
+/*icon*/
+.fl-icon {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.flag-icon {
+  background: url("../imgs/red48.png") no-repeat;
+  background-size: cover;
+}
+/*helper*/
+.fl-gap {
+  margin: 10px 0px;
+}

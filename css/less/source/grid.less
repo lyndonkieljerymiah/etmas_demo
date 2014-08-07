@@ -1,0 +1,71 @@
+/*
+container
+======================*/
+.container {
+	width: @base-width;
+	&:after,&before {
+		.clearfix(); //inherit clearfix helper
+	}
+}
+
+.container-fluid {
+    width: 100%;
+    &:after,&before {
+        .clearfix(); //inherit clearfix helper
+    }
+}
+
+/* Fluid Grid System */
+.row {
+    width: 100%; 
+    margin: 0 auto;
+	
+	&:before,&:after {
+		.clearfix(); //inherit clearfix helper
+	}
+	
+	.col-1, 
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8,
+	.col-9,
+	.col-10,
+	.col-11,
+	.col-12
+	{
+		position: relative;
+		min-height: 1px;
+		.padding-set(@gutter);
+		float:left;
+	}
+	
+	.col-1 {width: @grid-col-1;} 
+	.col-2 {width: @grid-col-2;} 
+	.col-3 {width: @grid-col-3;} 
+	.col-4 {width: @grid-col-4;} 
+	.col-5 {width: @grid-col-5;} 
+	.col-6 {width: @grid-col-6;} 
+	.col-7 {width: @grid-col-7;} 
+	.col-8 {width: @grid-col-8;} 
+	.col-9 {width: @grid-col-9;} 
+	.col-10 {width: @grid-col-10;} 
+	.col-11 {width: @grid-col-11;} 
+	.col-12 {width: @grid-col-12;} 
+
+	.col-offset-1 {margin-left: @grid-col-1}
+	.col-offset-2 {margin-left: @grid-col-2}
+	.col-offset-3 {margin-left: @grid-col-3}
+	.col-offset-4 {margin-left: @grid-col-4}
+	.col-offset-5 {margin-left: @grid-col-5}
+	.col-offset-6 {margin-left: @grid-col-6}
+	.col-offset-7 {margin-left: @grid-col-7}
+	.col-offset-8 {margin-left: @grid-col-8}
+	.col-offset-9 {margin-left: @grid-col-9}
+	.col-offset-10 {margin-left: @grid-col-10}
+	.col-offset-11 {margin-left: @grid-col-11}
+	.col-offset-12 {margin-left: @grid-col-12}
+}

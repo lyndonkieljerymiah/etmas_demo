@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+	<title></title>
+	<script src='textfieldvalidationmodule.js'></script>
+	
+</head>
+<body>
+	<div id="registration">
+		<form id="registrationForm" action='javascript:void()'>
+			<fieldset>
+				<table>
+				<tr>
+					<td><label for='username'>User Name:</label></td>
+					<td><input id='username' name='username' type='text' /><td>
+				</tr>
+				<tr>
+					<td><label for='email'>Email Address:</label></td>
+					<td><input id='email' name='email' type='email' /><td>
+				</tr>
+				
+				<tr>
+					<td><label for='tel'>Telephone Number:</label></td>
+					<td><input id='tel' name='tel' type='tel' /></td>
+				</tr>
+				
+				<tr>
+					<td><label for='zipcode'>Zip Code:</label></td>
+					<td><input id='zipcode' name='zipcode' type='text' /></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2"><button id='sendForm' type='submit'>Send</button></td>
+				</tr>
+				</table>
+			</fieldset>
+		</form>
+	</div>
+	<span id='error'></span>
+</body>
+
+<script>
+		
+		window.addEventListener('load',function(){ 
+			
+			var validationStates = new Array();
+			var sendForm = document.getElementById('sendForm');
+			
+			tfv = new TextfieldValidation();
+			tfv.addValidationRule('email',/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,handleValidation);
+			tfv.addValidationRule('tel',/[0-9]/,handleValidation);
+			tfv.addValidationRule('zipcode',/[A-Za-z]/,handleValidation);
+			
+			function handleValidation(e,args) { 
+				if(args == false) { 
+					e.style.cssText = 'background:yellow';
+				}
+				else { 
+					e.removeAttribute('style');
+				}
+			}
+			
+			sendForm.addEventListener('click',function() { 
+				
+				var isValid = true;
+				var fields = tfv.getState();
+				var totalState = fields.length;
+				var index;
+				var error = document.getElementById('error');
+				
+				
+				for(i=0;i < totalState;i++) { 
+					if(fields[i].isValid == false) { 
+						isValid = false;
+						break;
+					}
+				}
+				if(!isValid) { 
+					error.innerHTML = "You have an error";
+				}else { 
+					error.innerHTML = "No Error you can proceed";
+				}
+				
+			},false);
+			
+		
+		},false);
+	
+</script>
+</html>
